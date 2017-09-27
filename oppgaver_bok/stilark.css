@@ -1,0 +1,14 @@
+body{
+    font-size: 14px;
+    font-family: "century gothic", Arial, sans-serif;
+    background-color: lightgray;
+    color: #323232;
+}
+h2{
+    color: blue;
+    font-family: "Times New Roman";
+}
+h1{
+    text-align: center
+}
+
