@@ -1,0 +1,217 @@
+body{
+    margin: 0;
+    background-color: whitesmoke;
+
+}
+
+h2{
+    font-family: sans-serif;
+    text-align: center;
+}
+h3{
+    font-family: sans-serif;
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ul a{
+    display: block;
+    padding: 10px;
+    border-radius: 1px;
+    margin: 2px;
+    color: #333333;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: lightblue;
+}
+ul a:hover{
+    background-color: whitesmoke;
+}
+p::first-letter{
+    font-size: 50px;
+    color: darkred;
+}
+div.grid{
+    display: grid;
+    grid-gap: 2px;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "aside1"
+    "aside2"
+    "aside3"
+    "footer"
+;
+}
+div.header{
+    background-color: navy;
+    grid-area: header;
+
+}
+div.nav{
+    background-color: #4aaaa5;
+    grid-area: nav;
+    }
+div.main{
+    background-color: #7accc8;
+    grid-area: main;
+    min-height: 500px;
+    text-align: center;
+}
+div.aside1{
+    background-color: #28abe3;
+    grid-area: aside1;
+    min-height: 50px;
+}
+div.aside2{
+    background-color: #28abe3;
+    grid-area: aside2;
+    min-height: 50px;
+}
+div.aside3{
+    background-color: firebrick;
+    grid-area: aside3;
+    min-height: 50px;
+}
+div.footer{
+    background-color: navy;
+    grid-area: footer;
+}
+
+
+@media (min-width: 500px) {
+    div.grid{
+        grid-auto-columns: 1fr 4fr 1fr 1fr;
+        grid-template-areas:
+        "header header  header  header"
+        "nav    nav     nav     nav"
+        "aside1 main    aside2  aside3"
+        "footer footer  footer  footer "
+    ;
+    }
+    div.aside1{
+        background-color: #28abe3;
+        grid-area: aside1;
+
+    }
+    div.aside2{
+        background-color: #28abe3;
+        grid-area: aside2;
+        min-height: 150px;
+    }
+    div.aside3{
+        background-color: firebrick;
+        grid-area: aside3;
+        min-height: 150px;
+    }
+    div.main{
+        background-color: #7accc8;
+        grid-area: main;
+        min-height: 700px;
+}
+}
+
+    @media (min-width: 900px) {
+        div.grid{
+            grid-auto-columns: 1fr 4fr 1fr 1fr;
+            grid-template-areas:
+                    "header header  header  header"
+                    "aside1 aside1  aside1  aside1"
+                    "aside6 main    nav     nav"
+                    "aside6 main    aside2  aside3"
+                    "footer footer  footer  footer"
+
+        ;
+        }
+        div.aside6{
+            background-color: #28abe3;
+            grid-area: aside6;
+        }
+        ul li{
+            display: inline;
+        }
+
+        div.header{
+            background-color: navy;
+            grid-area: header;
+            min-height: 30px;
+        }
+        div.aside1{
+            background-color: #28abe3;
+            grid-area: aside1;
+
+        }
+        div.aside2{
+            background-color: #28abe3;
+            grid-area: aside2;
+            min-height: 500x;
+        }
+        div.aside3{
+            background-color: firebrick;
+            grid-area: aside3;
+            min-height: 500px;
+        }
+        div.main{
+            background-color: #7accc8;
+            grid-area: main;
+            min-height: 850px;
+        }
+    }
+    @media (min-width: 1500px) {
+        body{
+
+        }
+        ul li{
+            display: inline;
+        }
+        div.grid{
+            grid-auto-columns: 40px 1fr 8fr 2fr 2fr 40px;
+            grid-template-areas:
+                    "header header  header  header  header  header"
+                    "aside4 aside1  aside1   aside1  aside1  aside5"
+                    "aside4 aside6    main    nav     aside3   aside5"
+                    "aside4 aside6    main    aside2  aside3   aside5"
+                    "footer footer  footer  footer footer   footer"
+
+        ;
+        }
+        div.aside6{
+            background-color: #28abe3;
+            grid-area: aside6;
+        }
+        div.aside1{
+            background-color: #28abe3;
+            grid-area: aside1;
+
+        }
+        div.aside2{
+            background-color: #28abe3;
+            grid-area: aside2;
+            min-height: 500px;
+        }
+        div.aside3{
+            background-color: firebrick;
+            grid-area: aside3;
+            min-height: 500px;
+        }
+        div.main{
+            background-color: #7accc8;
+            grid-area: main;
+            min-height: 850px;
+        }
+        div.aside4{
+            background-color: lightblue;
+            grid-area: aside4;
+
+        }
+        div.aside5{
+            background-color: lightblue;
+            grid-area: aside5;
+
+        }
+}
+

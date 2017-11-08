@@ -1,0 +1,39 @@
+body{
+    background-color: burlywood;
+    font-family: sans-serif;
+}
+div.pakker{
+    width: 850px;
+    background: lightgray;
+    margin: auto;
+}
+h1{
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+a{
+ background-color mediumseagreen;
+}
+li a{
+    background: goldenrod;
+    display: block;
+    margin: 2px;
+    padding: 10px;
+    font-weight: bold;
+    width: 120px;
+    text-decoration: none;
+    color: #033b42;
+    border-radius: 5px;
+    }
+
+li a:hover{
+background-color: #37422e;
+box-shadow: #37422e;
+}
+ul li{
+display: inline;
+}

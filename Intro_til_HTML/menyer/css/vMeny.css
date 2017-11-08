@@ -1,0 +1,34 @@
+body{
+    background-color: powderblue;
+    font-family: sans-serif;
+}
+ul li{
+    display: inline;
+}
+ul a{
+    margin: 2px;
+    padding: 10px;
+    font-weight: bold;
+    width: 120px;
+    text-decoration: none;
+    color: #033b42;
+    border-radius: 5px;
+    background-color: greenyellow;
+}
+li a:hover{
+    background-color: green;
+}
+h1{
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+div.pakker{
+    width: 850px;
+    margin: auto;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
