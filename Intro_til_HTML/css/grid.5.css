@@ -4,6 +4,12 @@ body{
 
 }
 
+main{
+    text-align: center;
+}
+h4{
+    text-align: left;
+}
 h2{
     font-family: sans-serif;
     text-align: center;
@@ -26,6 +32,8 @@ ul a{
     font-weight: bold;
     text-decoration: none;
     background-color: lightblue;
+    max-width: 500px;
+
 }
 ul a:hover{
     background-color: whitesmoke;
@@ -40,8 +48,8 @@ div.grid{
     grid-template-areas:
     "header"
     "nav"
-    "main"
     "aside1"
+    "main"
     "aside2"
     "aside3"
     "footer"
@@ -120,17 +128,13 @@ div.footer{
             grid-auto-columns: 1fr 4fr 1fr 1fr;
             grid-template-areas:
                     "header header  header  header"
-                    "aside1 aside1  aside1  aside1"
-                    "aside6 main    nav     nav"
-                    "aside6 main    aside2  aside3"
+                    "aside1 main    nav     nav"
+                    "aside1 main    aside2  aside3"
                     "footer footer  footer  footer"
 
         ;
         }
-        div.aside6{
-            background-color: #28abe3;
-            grid-area: aside6;
-        }
+
         ul li{
             display: inline;
         }
@@ -172,17 +176,13 @@ div.footer{
             grid-auto-columns: 40px 1fr 8fr 2fr 2fr 40px;
             grid-template-areas:
                     "header header  header  header  header  header"
-                    "aside4 aside1  aside1   aside1  aside1  aside5"
-                    "aside4 aside6    main    nav     aside3   aside5"
-                    "aside4 aside6    main    aside2  aside3   aside5"
+                    "aside4 aside1    main    nav     aside3   aside5"
+                    "aside4 aside1    main    aside2  aside3   aside5"
                     "footer footer  footer  footer footer   footer"
 
         ;
         }
-        div.aside6{
-            background-color: #28abe3;
-            grid-area: aside6;
-        }
+
         div.aside1{
             background-color: #28abe3;
             grid-area: aside1;
