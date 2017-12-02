@@ -1,0 +1,478 @@
+body{
+    margin: 0;
+    background-color: ;
+    font-family: sans-serif;
+
+}
+div.main img{
+    margin-right: 0;
+    margin-left: 0;
+}
+div.meny img{
+    align-content: center;
+    text-align: center;
+}
+img.data{
+    width: 240px;
+    margin-top: 4px;
+    margin-left: 2%;
+
+}
+img.nett{
+float: none;
+    width: 200px;
+}
+iframe {
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0;
+    width: 200px;
+    height: 216px;
+
+}
+img.digi{
+    width: 200px;
+    margin-right: 0;
+    margin-left: 0;
+}
+img.fys{
+    width: 200px;
+    margin-right: 0;
+    margin-left: 0;
+}
+img.språk{
+    width: 200px;
+}
+img.tasta{
+    width: 200px;
+}
+img.sikker{
+    width: 200px;
+}
+img.tyv{
+    width: 200px;
+}
+img.hack{
+    width: 200px;
+}
+img.virus{
+    width: 200px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+div.h3nav{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    color: #F6F6F6;
+    text-align: center;
+}
+h1 {
+    margin: 0em 0 0.5em 0;
+    font-weight: 600;
+    font-family: 'Titillium Web', sans-serif;
+    position: relative;
+    font-size: 28px;
+    line-height: 30px;
+    padding: 15px 15px 15px 15px;
+    color: #355681;
+    box-shadow:
+            inset 0 0 0 1px rgba(53,86,129, 0.4),
+            inset 0 0 5px rgba(53,86,129, 0.5),
+            inset -285px 0 35px white;
+    border-radius: 0 10px 0 10px;
+    background: #fff url(../images/bartoszkosowski.jpg) no-repeat center left;
+}
+
+h2 {
+    margin: 0em 0 0.5em 0;
+    font-weight: normal;
+    position: relative;
+    text-shadow: 0 -1px rgba(0,0,0,0.6);
+    font-size: 24px;
+    line-height: 40px;
+    background: #355681;
+    background: rgba(53,86,129, 0.8);
+    border: 1px solid #fff;
+    padding: 5px 15px;
+    color: white;
+    border-radius: 0 10px 0 10px;
+    box-shadow: inset 0 0 5px rgba(53,86,129, 0.5);
+    font-family: 'Muli', sans-serif;
+}
+
+h3 {
+    margin: 0.5em 0 0.5em 0;
+    font-weight: 600;
+    font-family: 'Titillium Web', sans-serif;
+    position: relative;
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
+    font-size: 14px;
+    line-height: 20px;
+    color: #F6F6F6;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(53,86,129, 0.3);
+}
+
+h4 {
+    margin: 1em 0 0 0;
+    font-weight: 600;
+    font-family: 'Titillium Web', sans-serif;
+    position: relative;
+    font-size: 20px;
+    line-height: 20px;
+    color: #0f1b07;
+}
+
+p{
+    text-align: left;
+    font-family: sans-serif;
+    margin: 5px;
+    margin-top: 0;
+
+}
+p::first-letter{
+    font-size: 40px;
+    color: #788699;
+}
+div.grid{
+    display: grid;
+    grid-gap: 2px;
+    grid-template-areas:
+            "header"
+            "nav"
+            "meny"
+            "main"
+            "aside"
+            "footer"
+;
+}
+div.header{
+    background-color: #0f1b07;
+    grid-area: header;
+    color: #0f1b07;
+
+}
+div.nav{
+    background-color: #5c821a;
+    grid-area: nav;
+    text-align: center;
+    color: ;
+}
+div.meny{
+    background-color: #c6d166;
+    grid-area: meny;
+
+}
+div.main{
+    background-color: #ffffff;
+    grid-area: main;
+    min-height: 500px;
+    text-align: center;
+}
+div.aside{
+    background-color: #c6d166;
+    grid-area: aside;
+}
+div.footer{
+    background-color: #0f1b07;
+    grid-area: footer;
+    text-align: center;
+    color: #F6F6F6;
+}
+a.ttt{
+    color: whitesmoke;
+    display: block;
+    background-color: #355681;
+    width: 100px;
+    font-size: Large;
+    padding: 10px;
+    border-radius: 1px;
+    margin: auto;
+    font-weight: bold;
+    text-decoration: none;
+    align-content: center;
+}
+ol{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ol a{
+    display: flex;
+    padding: 10px;
+    margin: 2px;
+    text-decoration: none;
+    color: black;
+
+}
+ol a:hover{
+    background-color: #F6F6F6;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ul a{
+    display: block;
+    padding: 10px;
+    border-radius: 1px;
+    margin: 2px;
+    color: #F6F6F6;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #5c821a;
+
+}
+ul a.am{
+    display: block;
+    padding: 10px;
+    border-radius: 1px;
+    margin: 2px;
+    color: #5c821a;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #F6F6F6;
+}
+ul a:hover{
+    background-color: #F6F6F6;
+    color: #0f1b07;
+}
+input[type="submit"]{
+    display: block;
+    padding: 8px 15px;
+    font-weight: bold;
+    color: #0f1b07;
+}
+form{
+    display: block;
+    width: 220px;
+    padding: 5px;
+    color: #0f1b07;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 10px;
+
+}
+table{
+
+}
+th{
+    background-color: #788699;
+    border:1px solid #000000;
+    padding: 5px;
+    font-size: x-small;
+    font-family: sans-serif;
+}
+td{
+    border: 1px solid #000000;
+    padding: 5px;
+    font-family: sans-serif;
+    background-color: #ffffff;
+    font-size: x-small;
+}
+
+
+
+@media (min-width: 500px) {
+    div.grid {
+        grid-auto-columns: 1fr 3fr 1fr;
+        grid-template-areas:
+                "header header  header"
+                "nav    nav     nav"
+                "meny   main    main"
+                "aside  main    main"
+                "footer footer footer";
+    }
+    img.data{
+        width: 190px;
+
+    }
+    img.digi{
+        width: 300px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    div.main{
+        background-color: #F6F6F6;
+        grid-area: main;
+        min-height: 800px;
+        text-align: center;
+    }
+    img.fys{
+        width: 300px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    img.språk{
+        width: 300px;
+    }
+    img.tasta{
+        width: 300px;
+    }
+    img.sikker{
+        width: 300px;
+    }
+    img.tyv{
+        width: 300px;
+    }
+    img.hack{
+        width: 300px;
+    }
+    img.virus{
+        width: 300px;
+    }
+    img.nett{
+        width: 280px;
+    }
+}
+
+@media (min-width: 700px) {
+    div.main img{
+
+        margin-right: 0;
+        margin-left: 0;
+    }
+    iframe {
+        margin-right: 0;
+        margin-left: 0;
+        padding: 0;
+        width: 315px;
+        height: 236px;
+        float: inherit;
+
+    }
+    img.digi{
+        width: 400px;
+    }
+    img.fys{
+        width: 400px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    img.språk{
+        width: 400px;
+        float: right;
+    }
+    img.tasta{
+        width: 400px;
+    }
+    img.sikker{
+        width: 400px;
+    }
+    img.tyv{
+        width: 400px;
+    }
+    img.hack{
+        width: 400px;
+    }
+    img.virus{
+        width: 400px;
+    }
+    img.nett{
+        width: 400px;
+    }
+}
+
+@media (min-width: 1000px) {
+    div.grid {
+        grid-auto-columns: 1fr 3fr 1fr;
+        grid-template-areas:
+                "header header  header"
+                "nav    nav     nav"
+                "meny   main    aside"
+                "footer footer footer";
+    }
+    img.digi{
+        width: 500px;
+    }
+    th{
+        background-color: #788699;
+        border:1px solid #000000;
+        padding: 5px;
+        font-size: medium;
+        font-family: sans-serif;
+    }
+    td{
+        border: 1px solid #000000;
+        padding: 5px;
+        font-family: sans-serif;
+        background-color: #ffffff;
+        font-size: medium;
+    }
+
+}
+@media (min-width: 1300px) {
+    div.grid{
+        grid-auto-columns: 1fr 1fr 3fr 1fr 1fr;
+        grid-template-areas:
+                "luft1  header  header  header  luft2"
+                "luft1  nav     nav     nav     luft2"
+                "luft1  meny    main    aside   luft2"
+                "luft1  footer  footer  footer  luft2"
+
+    ;
+    }
+    div.main img{
+
+        margin-right: 10px;
+        margin-left: 0;
+    }
+    img.nett{
+        width: 600px;
+    }
+    iframe {
+        margin-right: 0;
+        margin-left: 0;
+        padding: 0;
+        width: 600px;
+        height: 436px;
+
+    }
+    img.digi{
+        width: 600px;
+    }
+    img.fys{
+        width: 600px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    img.språk{
+        width: 400px;
+        float: right;
+    }
+    img.tasta{
+        width: 600px;
+    }
+    img.sikker{
+        width: 600px;
+    }
+    img.tyv{
+        width: 600px;
+    }
+    img.hack{
+        width: 600px;
+    }
+    img.virus{
+        width: 600px;
+    }
+
+
+    div.luft1{
+        grid-area: luft1;
+    }
+    div.luft2{
+        grid-area: luft2;
+    }
+    div.main{
+        background-color: #F6F6F6;
+        grid-area: main;
+        min-height: 850px;
+        text-align: center;
+    }
+}
