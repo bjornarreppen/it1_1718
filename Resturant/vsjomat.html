@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Varm sjømat</title>
+    <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+<div class="grid">
+    <div class="header">
+        <h1>Resturant</h1>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="startside.html">Startside</a></li>
+            <li><a href="nyheter.html">Nyheter</a></li>
+            <li><a class="ama" href="Meny.html">Meny</a></li>
+            <li><a href="registerer.html">Ansatte</a></li>
+        </ul>
+    </div>
+    <div class="topm">
+        <ul>
+            <li class="al"><a href="Meny.html">Alle</a></li>
+            <li><a href="tilbud.html">Tilbud</a></li>
+            <li><a href="vegetar.html">Vegetar</a></li>
+            <li><a  class="am" href="vsjomat.html">Varm sjømat</a></li>
+            <li><a href="ksjomat.html">kald sjømat</a></li>
+            <li><a href="vkjott.html">Varmt kjøtt</a></li>
+            <li><a href="kkjott.html">Kaldt kjøtt</a></li>
+        </ul>
+    </div>
+
+
+    <div class="main">
+        <h2> --- Varm Sjømat Meny ---  </h2>
+        <hr>
+        <table>
+            <div id="divrat">
+                <p class="pRat"><label>Vurdering: <span id="outputRating"></span></label></p><input type='range' min='0' max='10' value='5' step='0.1' id='inpRating' ><button onclick='giRating()'>Send inn Vurdering</button>
+                <br><br>
+            </div>
+            <div class="retter">
+                <tbody id="brukertabell">
+
+                </tbody>
+            </div>
+        </table>
+    </div>
+    <div class="footer">
+        <p class="fp">| Telefon: (+47)432 769 982 | Epost: terra-restaurant@gmail.com | Adresse: lillevegen 22 |</p>
+    </div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-firestore.js"></script>
+
+
+<script>
+    firebase.initializeApp({
+        apiKey: "AIzaSyDcUvz420GjJuK5IXOXM0EUUEHsr5OowKQ",
+        authDomain: "fir-87fc8.firebaseapp.com",
+        databaseURL: "https://fir-87fc8.firebaseio.com",
+        projectId: "fir-87fc8",
+        storageBucket: "fir-87fc8.appspot.com",
+        messagingSenderId: "964507128477"
+    });
+    var db = firebase.firestore();
+
+
+    var ref = db.collection('resturant');
+    var retterE = document.querySelector('.retter');
+    var rmappe = ref.where('kat', '==', 'Varm sjømat');
+    var aktivId;
+    var pRating = document.querySelector('.pRating');
+    var inputRating     = document.querySelector('#inpRating');
+    var outputRating  = document.querySelector('#outputRating');
+
+    outputRating.innerHTML = inputRating.value;
+    inputRating.oninput = function () {
+        outputRating.innerHTML = this.value;
+    };
+
+
+    rmappe.onSnapshot(function (data) {
+        var objekt = data.docs;
+        retterE.innerHTML = "";
+
+        for(var x in objekt) {
+            var doc = objekt[x].data();
+            var tot =0;
+            var avg;
+            if(doc.rat.length===0){
+                avg = "ingen vurdering";
+            }else {
+                var len = doc.rat.length;
+
+                for (var i in doc.rat) {
+                    tot += doc.rat[i];
+                }
+                avg = (tot / len).toFixed(1);
+            }
+
+            retterE.innerHTML += "<div class='rett' >"+
+                "<div class='over'><H4>"+objekt[x].data().rett+"</H4></div>"+
+                "<div class='rkat'><p class='kat'>Kategori: "+objekt[x].data().kat+"</p></div>"+
+                "<div class='rkokk'><p class='kokk'>Kokkansvarlig: "+objekt[x].data().kokk+"</p></div>"+
+                "<div class='rbes'><p class='bes'>Beskrivelse: "+objekt[x].data().bes+"</p></div>"+
+                "<div class='rpris'><p class='pris'>"+objekt[x].data().pris+" kr</p></div>"+
+                "<div class='rimg'><img class='123' src="+ objekt[x].data().bilde + "></div>"+
+                "<div class='rrr'><p class=''>Vurdering: "+avg+"</p></div>" +
+                "<div class='knapp'><button onclick='giRat(&#34;"+objekt[x].id+"&#34;)' >Vis/Skjul Vurdering</button>" +
+                "</div>";
+        }
+    });
+
+    function giRat(id) {
+        aktivId = id;
+        var x = document.getElementById("divrat");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+
+    function giRating() {
+        var inpRating = document.querySelector('#inpRating');
+        var rat = [];
+        ref.doc(aktivId).get().then(function(doc) {
+            rat = doc.data().rat;
+            console.log("db: "+rat);
+            rat.push(inpRating.value*1);
+            console.log(rat);
+            ref.doc(aktivId).update("rat", rat);
+        });
+    }
+
+
+</script>
+</body>
+</html>
+

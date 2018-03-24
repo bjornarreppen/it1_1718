@@ -1,0 +1,608 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Cabin');
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    z-index: -3;
+    background-image: url("bilde/834072.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+img {
+    width: 100%;
+    min-height: 50px;
+    min-width: 50px;
+}
+audio{
+    max-width: 200px;
+}
+p{
+    color: lightblue;
+}
+.fp{
+    margin-top: -5px;
+    margin-bottom: -5px;
+    text-align: center;
+    color: black;
+}
+.divrat p{
+    color: whitesmoke;
+}
+h4{
+    color: #F6F6F6;
+}
+h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: black;
+    font-family: Brush Script MT;
+    font-size: 50px;
+}
+h1{
+    font-family: Brush Script MT;
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+hr{
+    height: 3px;
+    color: black;
+    background-color: lightblue;
+    outline-color: black;
+    border-radius: 1px;
+}
+
+
+
+/*Forsiden*/
+
+.start{
+    max-width: 1024px;
+    margin: 0 auto;
+    margin-top: 70px;
+    font-family: 'Roboto', sans-serif;
+    background-color: lightblue;
+    border-radius: 10px;
+}
+.start > * {
+    padding: 10px;
+}
+.start {
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+            "sheader"
+            "snav"
+            "smain"
+            "sfooter";
+}
+.sheader{
+    grid-area: sheader;
+    background-color: #0070a4;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.smain{
+    background-color: teal;
+    grid-area: smain;
+}
+.smain img{
+    height: 250px;
+}
+.sfooter{
+    background-color: #0070a4;
+    grid-area: sfooter;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    text-align: center;
+}
+.snav{
+    color: #F6F6F6;
+    font-family: 'Roboto', sans-serif;
+    background-color: teal;
+    min-height: 90px;
+    text-align: center;
+    grid-area: snav;
+}
+.snav ul {
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    display: inline;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.snav ul li{
+    display: inline;
+}
+.snav li{
+    margin: 0;
+    flex: 1 1;
+}
+.snav a{
+    color: #EBF2FA;
+    width: 100%;
+    display: block;
+    padding: 5px 10%;
+    text-align: center;
+    text-decoration: none;
+
+}
+.snav a:hover{
+    background-color: #f1f1f1;
+    animation: farge 2s forwards;
+    color: #033b42;
+}
+.sp{
+    font-size: 30px;
+    font-family: sans-serif;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #F6F6F6;
+}
+.vm{
+    grid-area: vm;
+}
+.sm{
+    grid-area: sm;
+}
+.hm{
+    grid-area: hm;
+}
+.myVideo{
+    height: 250px;
+    max-width: 250px;
+}
+.start img{
+    max-width: 250px;
+}
+
+
+
+/*Meny*/
+
+ul{
+    list-style-type: none;
+}
+ul a.am{
+    background-color: #f1f1f1;
+    animation: farge 2s forwards;
+    color: #033b42;
+}
+ul a.ama{
+    background-color: dimgray;
+    animation: farge 2s forwards;
+    color: #EBF2FA;
+}
+.grid {
+    max-width: 1024px;
+    background-color: whitesmoke;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+.grid > * {
+    padding: 10px;
+}
+.header {
+    grid-area: header;
+    background-color: #80C136;
+}
+.main {
+    grid-area: main;
+    background-color: #EBF2FA;
+    background-image: url("bilde/tavle.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+}
+.nav {
+    grid-area: nav;
+    background-color: #C3593E;
+    padding: 0;
+}
+.nav ul {
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+.nav li{
+    margin: 0;
+    flex: 1 1;
+
+}
+.nav a{
+    color: #EBF2FA;
+    width: 100%;
+    display: block;
+    padding: 1.15em 3%;
+    text-align: center;
+    text-decoration: none;
+
+}
+.nav a:hover{
+    background-color: #f1f1f1;
+    animation: farge 2s forwards;
+    color: #033b42;
+
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #8EAC3C;
+}
+.topm{
+    grid-area: topm;
+    background-color: #4aaaa5;
+}
+.topm ul {
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    display: inline;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+
+}
+.topm ul li{
+    display: inline;
+}
+
+.topm a{
+    color: #EBF2FA;
+    width: 100%;
+    display: block;
+    padding: 1.15em 3%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+.al a{
+    margin-left: -10px;
+}
+
+.topm a:hover{
+    background-color: #f1f1f1;
+    animation: farge 2s forwards;
+    color: #033b42;
+}
+.grid {
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+            "header"
+            "nav"
+            "topm"
+            "main"
+            "aside"
+            "footer";
+}
+
+
+
+/*rettene*/
+
+div.retter{
+    max-width: 1024px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 75px;
+    -webkit-column-rule: 4px double #ff00ff; /* Chrome, Safari, Opera */
+    -moz-column-rule: 4px double #ff00ff; /* Firefox */
+    column-rule: 4px double #ff00ff;
+
+}
+div.rett{
+    width: 100%;
+    height: auto;
+    font-size: 10px;
+    padding: 5px;
+    position: relative;
+    display: grid;
+    font-family: "Segoe UI";
+}
+
+.rett {
+    grid-gap: 2px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+            "over   rimg"
+            "rkat   rimg"
+            "rkokk  rimg"
+            "rbes   rbes"
+            "rpris  rrr";
+}
+#divrat{
+    display: none;
+    grid-area: rat;
+    max-width: 250px;
+}
+.over{
+    grid-area: over;
+}
+.rkat {
+    grid-area: rkat;
+}
+.rkokk{
+    grid-area: rkokk;
+}
+.rbes{
+    grid-area: rbes;
+}
+.rpris{
+    grid-area: rpris;
+}
+.rimg{
+    grid-area: rimg;
+    padding-right: 0;
+    margin-right: -10px;
+}
+.rrr{
+    grid-area: rrr;
+}
+div.rett:hover{
+    box-shadow: lightblue 2px 2px 2px ;
+}
+
+.rett H4{
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    display: inline;
+    font-family: 'Lobster';
+    color: white;
+}
+.rett p{
+    font-size: 13px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Cabin';
+    color: white;
+
+}
+div.retter .kokk{
+    font-size: 13px;
+}
+div.retter .pris{
+    font-size: 15px;
+}
+div.rett img{
+    float: left;
+    margin-left: -5px;
+    margin-top: -5px;
+}
+
+
+
+/*Ansatte*/
+
+.skjemaform{
+    grid-area: skje;
+}
+.nymskjema{
+    grid-area: nyskje;
+}
+input{
+    width: 100%
+}
+
+form{
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: white;
+}
+form p{
+    margin: 0;
+}
+form .full_bredde{
+ width: 100%;
+}
+
+form > *{
+    padding: 1em;
+}
+
+form textarea, . input, .button{
+    font-size: 20px;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+}
+
+form select{
+    width: 100%;
+    margin-top: 3px;
+    height: 52px;
+    border: 1px solid #a9a9a9;;
+    border-radius: 20px;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+}
+
+form button{
+    background-color: #0070a4;
+    color: white;
+}
+
+form button:hover{
+    background-color: #033b42;
+    cursor: pointer;
+
+}
+form label{
+    display: block;
+    color: #000000;
+}
+
+
+
+/*grider-media*/
+
+@media (min-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas:
+                "header header"
+                "nav    nav"
+                "topm topm"
+                "main  main"
+                "footer  footer";
+    }
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    div.retter{
+        max-width: 1024px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+
+    }
+    .myVideo{
+        height: 250px;
+        max-width: 1250px;
+    }
+    .start img{
+        max-width: 1250px;
+    }
+    h1 {
+
+        font-size: 70px;
+    }
+    audio{
+        max-width: 1250px;
+    }
+
+}
+@media (min-width: 700px) {
+    .grid {
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-areas:
+        "header header  header"
+        "nav    topm    topm"
+        "nav    main    main"
+        "nav    main    main"
+        "footer footer  footer"
+    }
+    nav ul {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .topm a {
+        color: #EBF2FA;
+        width: 100%;
+        display: inline;
+        padding: 10px 4px;
+        text-align: center;
+        text-decoration: none;
+
+    }
+    .topm {
+        grid-area: topm;
+        background-color: #4aaaa5;
+        height: 39px;
+    }
+    .smain {
+        display: grid;
+        grid-gap: 2px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+                "vm sm  hm";
+    }
+}
+    @media (min-width: 1300px) {
+        .grid {
+            grid-template-columns: 1fr 4fr 1fr;
+            grid-template-areas:
+            "header header  header"
+            "nav    topm    topm"
+            "nav    main    main"
+            "nav    main    main"
+            "footer footer  footer"
+        }
+        nav ul {
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .topm a {
+            color: #EBF2FA;
+            width: 100%;
+            display: inline;
+            padding: 10px 23px;
+            text-align: center;
+            text-decoration: none;
+        }
+        .topm {
+            grid-area: topm;
+            background-color: #4aaaa5;
+            height: 39px;
+        }
+
+        .snav a {
+            color: #EBF2FA;
+            width: 100%;
+            display: inline;
+            padding: 5px 63px;
+            margin: 50px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .snav {
+            grid-area: snav;
+            background-color: #4aaaa5;
+            height: 39px;
+            max-width: 1024px;
+        }
+
+        .skjemapakker {
+            grid-template-columns: 1fr;
+        }
+    }
+    @media (min-width: 1000px) {
+        .sf {
+            display: grid;
+            grid-gap: 2px;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                    "skje   nyskje";
+        }
+    }
+
+
+    /*
+    #C3593E
+    #F6BA35
+    #8EAC3C
+    #80C136
+    #DC612C
+    #F6DF81
+     */

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant</title>
+    <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+<div class="grid">
+    <div class="header">
+        <h1>Resturant</h1>
+    </div>
+
+    <div class="nav">
+        <ul>
+            <li><a href="startside.html">Startside</a></li>
+            <li><a href="nyheter.html">Nyheter</a></li>
+            <li><a href="Meny.html">Meny</a></li>
+            <li><a class="ama" href="registerer.html">Ansatte</a></li>
+        </ul>
+    </div>
+    <div class="main">
+    <div class="skjemapakker">
+        <div class="sf">
+
+
+
+
+        <div class="skjemaform">
+            <h2>Registrer ny rett her</h2>
+            <form id="rettskjema">
+                 <label>Rett</label>
+                <input name="title" type="text" id="inpRett"><br>
+
+
+                <label>Kategori</label><br>
+                <select name="" id="inpKat">
+                    <option value="Vegetar">Vegetar</option>
+                    <option value="Varm sjømat">Varm sjømat</option>
+                    <option value="Kald sjømat">Kald sjømat</option>
+                    <option value="Varmt kjøtt">Varmt kjøtt</option>
+                    <option value="Kaldt kjøtt">Kaldt kjøtt</option>
+                </select><br>
+
+                <label>Kokkansvarlig</label>
+                <input type="text" id="inpKokk"><br>
+
+            <label>Bilde av retten</label>
+            <input type="text" id="inpBilde"><br>
+
+            <label>Kort beskrivelse</label>
+            <input type="text" id="inpBes"><br>
+
+            <label>Pris</label>
+            <input type="number" id="inpPris"><br><br>
+
+            <button class="full_bredde" type="submit">Publiser rett</button>
+            </form>
+        </div>
+<div class="nymskjema">
+    <h2>Skriv nyhetsmelding her</h2>
+        <form id="nyhetskjema">
+
+            <label>Overskrift</label>
+            <input type="text" id="nyhet">
+
+            <label>Tekst</label>
+            <input type="text" id="text">
+
+            <label>Bilde</label>
+            <input type="text" id="bilde">
+            <br><br>
+
+            <button class="full_bredde" type="submit">Publiser nyhetsmelding</button>
+        </form>
+</div>
+        </div>
+    </div>
+    </div>
+        <div class="footer">
+            <p class="fp">| Telefon: (+47)432 769 982 | Epost: terra-restaurant@gmail.com | Adresse: lillevegen 22 |</p>
+        </div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-firestore.js"></script>
+
+<script>
+    firebase.initializeApp({
+        apiKey: "AIzaSyDcUvz420GjJuK5IXOXM0EUUEHsr5OowKQ",
+        authDomain: "fir-87fc8.firebaseapp.com",
+        databaseURL: "https://fir-87fc8.firebaseio.com",
+        projectId: "fir-87fc8",
+        storageBucket: "fir-87fc8.appspot.com",
+        messagingSenderId: "964507128477"
+    });
+
+    // Initialize Cloud Firestore through Firebase
+    var db = firebase.firestore();
+
+    var retter = db.collection('resturant');
+    var nyheter = db.collection('nyheter');
+    var rettskjema = document.querySelector('#rettskjema');
+    var nyhetskjema = document.querySelector('#nyhetskjema');
+
+    var inpRett         = document.querySelector('#inpRett');
+    var inpKat          = document.querySelector('#inpKat');
+    var inpKokk         = document.querySelector('#inpKokk');
+    var inpBilde        = document.querySelector('#inpBilde');
+    var inpBes          = document.querySelector('#inpBes');
+    var inpPris         = document.querySelector('#inpPris');
+
+    var inpNyhet        = document.querySelector('#nyhet');
+    var inpText         = document.querySelector('#text');
+    var inp2bilde       = document.querySelector('#bilde');
+
+    rettskjema.onsubmit = registrerRett;
+
+
+        function registrerRett(evt) {
+            evt.preventDefault();
+
+            //legger til nytt dokument i brukere-collection
+            retter.add(
+                {
+                    rett: inpRett.value,
+                    kat: inpKat.value,
+                    kokk: inpKokk.value,
+                    bilde: inpBilde.value,
+                    bes: inpBes.value,
+                    pris: inpPris.value,
+                    rat: []
+                }
+            );
+
+
+            rettskjema.reset();
+            inpRett.focus();
+        }
+
+    nyhetskjema.onsubmit = registrerNyhet;
+
+    function registrerNyhet(evt) {
+        evt.preventDefault();
+
+        nyheter.add(
+            {
+                nyhet: inpNyhet.value,
+                text: inpText.value,
+                tobilde: inp2bilde.value
+            }
+        );
+
+
+        nyhetskjema.reset();
+        inpNyhet.focus();
+    }
+
+
+/*
+    buttonAdd.addEventListener('click', function () {
+        db.collection("resturant").add({
+            rett:   inpRett.value,
+            kat:    inpKat.value,
+            kok:    inpKok.value,
+            bilde:  inpBilde.value,
+            bes:    inpBes.value,
+            pris:   inpPris.value
+        })
+            .then(function(docRef) {
+
+                inpRett.value   = '';
+                inpKat.value    = '';
+                inpKok.value    = '';
+                inpBilde.value  = '';
+                inpBes.value    = '';
+                inpPris.value   = '';
+
+
+            })
+            .catch(function(error) {
+                console.error("Feilmelding ved opplasting til databasen: ", error);
+            });
+    });
+*/
+
+
+</script>
+
+</body>
+</html>

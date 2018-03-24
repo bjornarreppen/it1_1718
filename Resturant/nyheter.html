@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nyheter</title>
+    <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+<div class="grid">
+    <div class="header">
+        <h1>Resturant</h1>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="startside.html">Startside</a></li>
+            <li><a  class="ama" href="nyheter.html">Nyheter</a></li>
+            <li><a  href="Meny.html">Meny</a></li>
+            <li><a href="registerer.html">Ansatte</a></li>
+        </ul>
+    </div>
+    <div class="main">
+
+        <table>
+
+            <div class="nyheter">
+                <tbody id="brukertabell">
+
+                </tbody>
+            </div>
+        </table>
+    </div>
+    <div class="footer">
+        <p class="fp">| Telefon: (+47)432 769 982 | Epost: terra-restaurant@gmail.com | Adresse: lillevegen 22 |</p>
+    </div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-firestore.js"></script>
+
+
+<script>
+    firebase.initializeApp({
+        apiKey: "AIzaSyDcUvz420GjJuK5IXOXM0EUUEHsr5OowKQ",
+        authDomain: "fir-87fc8.firebaseapp.com",
+        databaseURL: "https://fir-87fc8.firebaseio.com",
+        projectId: "fir-87fc8",
+        storageBucket: "fir-87fc8.appspot.com",
+        messagingSenderId: "964507128477"
+    });
+    var db = firebase.firestore();
+
+    var ref = db.collection('nyheter');
+    var retterE = document.querySelector('.nyheter');
+
+
+    ref.onSnapshot(function (data) {
+        var objekt = data.docs;
+
+
+        for(var x in objekt) {
+            var doc = objekt[x].data();
+
+            retterE.innerHTML += "<div class='rett'>"+
+                "<div class='nyhet'><H4>"+doc.nyhet+"</H4></div>"+
+                "<div class='text'><p class='text'>"+doc.text+"</p></div>"+
+                "<div class='rimg'><img class='123' src="+doc.tobilde + "></div>"+
+                "</div>";
+        }
+    });
+
+</script>
+</body>
+</html>
+
